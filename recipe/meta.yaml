@@ -1,5 +1,5 @@
 {% set name = "graspy" %}
-{% set version = "0.2" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/neurodata/graspy/archive/v{{ version }}.tar.gz
-  sha256: 00cbd96c19113355c181bd8efa07dd487bbac1ebd9a8bf14d0da1945091a51fb
+  sha256: 1cd89020232fbb1a0a87c9bba2f62b83b10b3afce92ef712a1c177e6f35bd004
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   home: https://graspy.neurodata.io/
   license: Apache-2.0
   license_file: LICENSE
-  summary: 'Python package for graph statistical algorithms.'
+  summary: Python package for graph statistical algorithms.
 
   # The remaining entries in this section are optional, but recommended.
   description: |
