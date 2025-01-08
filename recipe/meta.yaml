@@ -11,15 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - networkx >=2.1
     - numpy >=1.8.1
     - scikit-learn >=0.19.1
@@ -28,6 +28,8 @@ requirements:
     - matplotlib-base >=3.0.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - graspy
 
